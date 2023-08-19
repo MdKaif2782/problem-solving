@@ -57,8 +57,8 @@ public class cqComb {
                             if (!contains(result, i)){
                                 result[6] = i;
                                 int[] temp = orderArray(result);
-                                System.out.println(Arrays.toString(temp));
                                 if (!containsArrayInList(combinations, temp)){
+                                    System.out.println(Arrays.toString(temp));
                                     combinations.add(temp);
                                 }
                             }
