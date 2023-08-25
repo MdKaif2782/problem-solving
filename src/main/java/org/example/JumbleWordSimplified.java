@@ -2,16 +2,13 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class JumbleWord {
+public class JumbleWordSimplified {
     public static void main(String[] args) {
         char[] set = {'u', 'k', 'f', 'c'};
-        findPermutations(set);
-    }
-    public static ArrayList<char[]> findPermutations(char[] set) {
-        ArrayList<char[]> permutations = new ArrayList<>();
         int[] iterator = new int[set.length];
         int pointer;
         char[] result = new char[set.length];
+        int counter = 0;
 
         while (true) {
             for (int i = 0; i < set.length; i++) {
@@ -29,7 +26,10 @@ public class JumbleWord {
                     }
                 }
             }
-            if (!hasDuplicate) permutations.add(temp);
+            if (!hasDuplicate) {
+                System.out.println(temp);
+                counter++;
+            }
 
             if (iterator[iterator.length - 1] == set.length - 1) {
                 iterator[iterator.length - 1] = 0;
@@ -54,10 +54,6 @@ public class JumbleWord {
             }
 
         }
-        for (char[] element : permutations) {
-            System.out.println(element);
-        }
-        System.out.println(permutations.size() + " permutations found.");
-        return permutations;
+        System.out.println(counter + " permutations found.");
     }
 }
